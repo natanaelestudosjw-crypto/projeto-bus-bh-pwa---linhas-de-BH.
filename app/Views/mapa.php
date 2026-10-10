@@ -12,6 +12,9 @@
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0f172a">
     
     <style>
         :root {
@@ -540,6 +543,14 @@
 
         setInterval(carregarOnibus, 10000);
         carregarOnibus();
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log("PWA Service Worker registado com sucesso!"))
+            .catch((err) => console.error("Erro ao registar Service Worker:", err));
+        }
     </script>
 </body>
 </html>
