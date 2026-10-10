@@ -197,7 +197,7 @@ setInterval(carregarOnibus, 10000);
 
 // Regista o Service Worker para habilitar o PWA
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/assets/sw.js')
-        .then(() => console.log("Service Worker registado com sucesso!"))
-        .catch((err) => console.log("Erro ao registar Service Worker:", err));
+    navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('Service Worker registado com sucesso!', reg))
+    .catch(err => console.log('Erro ao registar o Service Worker:', err));
 }
